@@ -1,10 +1,10 @@
-import Content from "./content";
+import Content from "./Content";
 
 const Categorynews = (props) => {
   return (
     <div className="containercont">
       <div>
-        <h2>{props.title}</h2>
+        <h3>{props.title}</h3>
       </div>
       <div className="newsitem">
         {props.news.map((medee) => {
