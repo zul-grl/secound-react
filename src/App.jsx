@@ -3,6 +3,8 @@ import Card from "./components/Card";
 import Categorynews from "./components/Catogarynews";
 import Header from "./components/Header";
 import Row from "./components/Row";
+import Booklet from "./components/Booklet";
+import Column2 from "./Column2";
 
 const news = [
   {
@@ -172,7 +174,28 @@ function App() {
         </p>
       </div>
       <Row column1={column1Data} column2={column2Data} />
-
+      <div className="book">
+        <Booklet />
+        <div className="bookcard">
+          <div className=" bookpost">
+            <p>Хэвлэлийн мэдээ</p>
+            <h4>Монгол бартендер дэлхийд өрсөлдлөө </h4>
+          </div>
+        </div>
+        <div>
+          {column2Data.map((medee) => {
+            return (
+              <Column2
+                image={medee.image}
+                title={medee.title}
+                para={medee.para}
+                author={medee.author}
+              />
+            );
+          })}
+        </div>
+      </div>
+      {/* <Booklet column2={column2Data} /> */}
       <div className="container">
         {news.slice(0, 4).map((medee) => (
           <Card
