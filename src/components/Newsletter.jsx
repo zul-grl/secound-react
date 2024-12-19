@@ -13,7 +13,7 @@ const Newsletter = (props) => {
           <h3 style={{ fontSize: "24px", margin: 0 }}>
             Хөрөнгө оруулалт, бизнесийн тоймыг
           </h3>
-          <h3 style={{ fontSize: "24px", color: "blue", margin: 0 }}>
+          <h3 style={{ fontSize: "24px", color: "#0040D4", margin: 0 }}>
             5 минутад
           </h3>
         </div>

@@ -1,6 +1,6 @@
 const Stickyimage = (props) => {
   return (
-    <div>
+    <div className="images">
       <div
         style={{
           maxWidth: "380px",
