@@ -1,4 +1,4 @@
-import Column2 from "../Column2";
+import Column2 from "./Column2";
 const Row = (props) => {
   return (
     <div className="row">

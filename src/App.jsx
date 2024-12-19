@@ -4,7 +4,10 @@ import Categorynews from "./components/Catogarynews";
 import Header from "./components/Header";
 import Row from "./components/Row";
 import Booklet from "./components/Booklet";
-import Column2 from "./Column2";
+import Column2 from "./components/Column2";
+import Newsletter from "./components/Newsletter";
+import Stickyimage from "./components/Stickyimage";
+import Footer from "./components/Footer";
 
 const news = [
   {
@@ -145,7 +148,20 @@ function App() {
   ];
 
   const column1Data = news[0];
-  const column2Data = news.slice(1, 5).map((item, i) => {
+  const column2Data = news.slice(1, 4).map((item, i) => {
+    if (i === 0) {
+      return item;
+    } else {
+      return {
+        title: item.title,
+        para: item.para,
+        author: item.author,
+        category: item.category,
+        image: null,
+      };
+    }
+  });
+  const column2Data2 = news.slice(4, 7).map((item, i) => {
     if (i === 0) {
       return item;
     } else {
@@ -163,7 +179,7 @@ function App() {
       <Header />
       <div className="ads">
         <img
-          src="https://cdn.boost.mn/66d672fbb1eb1b3f1bdc87e1/creative/474c14c2-118d-4cb5-9812-270c320a5cf4.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=prod-boost-sa%40aqueous-cabinet-374702.iam.gserviceaccount.com%2F20241217%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20241217T131439Z&X-Goog-Expires=86399&X-Goog-Signature=308390c36ecaf474ff427b181bf6e670700c57181b022e09327cd4dfa49a7751de5b1b11bfb95406f666c7b3553e96a57709538fb4bd6635d30268e11ee9e2fe08276ea497454ced45ce0b1cda418a9e7130f4d3dc0864a9ac11f1fa7d8702a51d262e47fcc5f340d587830b27feccb9b03e4315eedc2134b67c3532d1be3e06e1903e6041a76c2d2238aea98a413c3f7977f4cf858614e2f4a2c0256bd4c21b95f18d862bffa5791292e50cc05eca682438e8304a0455381bacbce4bffa02bb5167a0d1b92eaeea4abfb7d63ea6315fb2da14c5e650f9225808360b4139a6bcedaf51897bd0d62cc8f79f7012aae10d7c103c45e0ca9b035906e54591ce9e11&X-Goog-SignedHeaders=host"
+          src="https://cdn.boost.mn/66d672fbb1eb1b3f1bdc87e1/creative/474c14c2-118d-4cb5-9812-270c320a5cf4.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=prod-boost-sa%40aqueous-cabinet-374702.iam.gserviceaccount.com%2F20241218%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20241218T132425Z&X-Goog-Expires=86399&X-Goog-Signature=987cf7e6a5c27397ea1e0240b2a90361e2829215b596ca1385eb3906cf5ae3cbf2f3524aef54821fc7cf750b3a0f4efa22cf7ff5f991262bc414c7a8e630d1de8cadd922c11ffc0937090c5f97c85d92614b95fb66fe78708ebac7d4df23a25c33cbe128238d8cd45f9e3bb60ff187af77dd17fcff041fc499b83935d6f784b44470e212f6a50d6dd62029cd21c56ce5f4fbe374ae5e0f91a31de87d2dd630cd1b4722466379b3d3e6003f4ccc22ac2ca10b1d4e28095a1c47afebc245be7b5d7d36125deb7030420fc7870bd7c94a861d661256df6cfd597295d6fee4cc5587dcbd0553d31afade80bbe9185ba2c629e78e0023884cf921924a83a2c2d8e1f8&X-Goog-SignedHeaders=host"
           alt=""
         />
       </div>
@@ -183,7 +199,7 @@ function App() {
           </div>
         </div>
         <div>
-          {column2Data.map((medee) => {
+          {column2Data2.map((medee) => {
             return (
               <Column2
                 image={medee.image}
@@ -195,17 +211,52 @@ function App() {
           })}
         </div>
       </div>
-      {/* <Booklet column2={column2Data} /> */}
-      <div className="container">
-        {news.slice(0, 4).map((medee) => (
-          <Card
-            key={medee.title}
-            image={medee.image}
-            title={medee.title}
-            para={medee.para}
-            author={medee.author}
+      <Newsletter />
+      <div className="rowcontainer">
+        <div className="container">
+          {news.slice(0, 4).map((medee) => (
+            <Card
+              key={medee.title}
+              image={medee.image}
+              title={medee.title}
+              para={medee.para}
+              author={medee.author}
+            />
+          ))}
+          <img
+            src="https://cdn.boost.mn/66d672fbb1eb1b3f1bdc87e1/creative/bfe643d1-36ba-4da7-8217-521d83e28491.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=prod-boost-sa%40aqueous-cabinet-374702.iam.gserviceaccount.com%2F20241218%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20241218T073700Z&X-Goog-Expires=86399&X-Goog-Signature=10e4c227967aee4bbd7b17ad6b111f8687f893803749cf88a1442879d4b28545cc2dcd2d8d1dabffe9f15d4fb35493cf649b813ba9447f7d79562b6f62c3b9d3bffe7816bebf15c7673062b58bd06b5fd1c3f3da3e4f468cdd3d24d54d65ea45a136cf18e4c55602346dd4e5f02e8a3ef4379f9c7b86f0483844053e8f9dabb7abc3fe440898b8eca567ee608d3bba91c9293a1a19c6edca1d0770e6d1707cc6f2972198fbcd1c65d57104e096f4e779fbfc75ecd26b14a5dbdc6da28f629586d4eefffbc1887a39fd2e35b4b706629e10847f86686e742f280248f5f7f4d5a453d6bf8e15724e80382c1b7107808920d386495756b7b2d6c3eddd29d92cb314&X-Goog-SignedHeaders=host"
+            alt=""
+            style={{
+              width: "100%",
+              maxWidth: "780px",
+              aspectRatio: 780 / 126,
+              marginBottom: "22px",
+            }}
           />
-        ))}
+          {news.slice(4, 8).map((medee) => (
+            <Card
+              key={medee.title}
+              image={medee.image}
+              title={medee.title}
+              para={medee.para}
+              author={medee.author}
+            />
+          ))}
+          <div
+            style={{
+              display: "flex",
+              fontWeight: "700",
+              maxWidth: "780px",
+              width: "100%",
+              padding: "7px 20px 6px",
+              justifyContent: "center",
+              backgroundColor: "#f5f8fc",
+            }}
+          >
+            Илүү үзэх
+          </div>
+        </div>
+        <Stickyimage />
       </div>
       <div className="category-container">
         {categories.map((category) => (
@@ -215,6 +266,9 @@ function App() {
             news={news.filter((item) => item.category === category).slice(0, 3)}
           />
         ))}
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

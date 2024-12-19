@@ -1,4 +1,3 @@
-import List from "./List";
 const listItem = [
   {
     date: "Tue, 17 Dec 2024 23:00:00 +0000",
@@ -66,14 +65,18 @@ const listItem = [
     title: "🥇 Play Store-н аваргууд",
   },
 ];
+
 const Booklet = (props) => {
   return (
     <div className="black">
       <p className="booktitle">Товхимлууд</p>
 
       <div className="listcont">
-        {listItem.map((props) => (
-          <List date={props.date} title={props.title} />
+        {listItem.map((item) => (
+          <div className="list">
+            <p>{item.date}</p>
+            <h5>{item.title}</h5>
+          </div>
         ))}
       </div>
     </div>
