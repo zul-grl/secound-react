@@ -102,10 +102,15 @@ h3 {
   margin: 0 25px;
   font-size: 16px;
   font-weight: 800;
+  cursor: pointer;
+}
+.droplist p:hover {
+  color: #0040d4;
 }
 .logo {
   margin-right: 25px;
   display: flex;
+  cursor: pointer;
   align-items: center;
 }
 .search button {
@@ -115,6 +120,7 @@ h3 {
   background-color: #0040d4;
   color: white;
   font-weight: 700;
+  cursor: pointer;
 }
 .search {
   display: flex;
@@ -122,6 +128,9 @@ h3 {
   padding: 5px 0;
   align-items: center;
   margin-left: auto;
+}
+.div svg {
+  cursor: pointer;
 }
 body {
   background-color: #f4f4f4;
@@ -136,6 +145,7 @@ body {
   margin-top: 25px;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 .lemonade {
   display: flex;
@@ -152,13 +162,27 @@ body {
   background-color: rgb(232, 232, 232);
   width: 100%;
   border-radius: 0 5px 5px 0;
+  cursor: pointer;
 }
+
 .lemonade button {
   padding: 10px 16px;
   border: 0;
   border-radius: 5px 0 0 5px;
   background-color: #fbda04;
   font-weight: 700;
+  animation: fade-in 1s infinite;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 .column1 {
   max-width: 778px;

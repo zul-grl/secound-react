@@ -1,3 +1,49 @@
+const dropdown = [
+  "Товхимол",
+  "Нийтлэлүүд",
+  "Цувралууд",
+  "Подкаст",
+  "Бидний тухай",
+];
+
+const dropdownlist = [
+  ["Lemon Press", "Inside Mongolia", "Тусгай дугаар"],
+  [
+    "Эдийн засаг",
+    "Санхүү",
+    "Бизнес",
+    "Технологи",
+    "Хэвлэлийн мэдээ",
+    "Зах зээл",
+    "Сурталчилгаа",
+    "Ярилцлага",
+    "Mining Week x MinePro",
+  ],
+  [
+    "Opinions",
+    "Lead With",
+    "Lemonade",
+    "LP Transcript",
+    "Travel With",
+    "Mining 101",
+    "Finspiration",
+    "How I Invest",
+    "Web3 Nest",
+    "Blockchain",
+    "Lemon Pedia",
+    "Stories",
+    "Talks",
+  ],
+  ["Lunch Hour"],
+  [
+    "Бидний тухай",
+    "Хамтран ажиллах",
+    "Редакцын бодлого",
+    "Бидэнтэй холбогдох",
+    "Байгууллагын мэдээ",
+  ],
+];
+
 const Header = (props) => {
   return (
     <div className="header">

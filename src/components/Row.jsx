@@ -1,28 +1,38 @@
 import Column2 from "./Column2";
-const Row = (props) => {
+
+const Row = ({ news }) => {
+  const column1Data = news[0];
+
+  const column2Data = news.slice(1, 4).map((item, index) => ({
+    title: item.title,
+    para: item.para,
+    author: item.author,
+    category: item.category,
+    image: index === 0 ? item.image : null,
+  }));
+
   return (
     <div className="row">
       <div className="column1">
         <div className="imgrow">
-          <img src={props.column1.image} alt="" />
+          <img src={column1Data.image} alt="" />
         </div>
         <div className="post-row">
-          <p className="blue">{props.column1.para}</p>
-          <h2>{props.column1.title}</h2>
-          <p className="gray">{props.column1.author}</p>
+          <p className="blue">{column1Data.para}</p>
+          <h2>{column1Data.title}</h2>
+          <p className="gray">{column1Data.author}</p>
         </div>
       </div>
       <div className="column2">
-        {props.column2.map((medee) => {
-          return (
-            <Column2
-              image={medee.image}
-              title={medee.title}
-              para={medee.para}
-              author={medee.author}
-            />
-          );
-        })}
+        {column2Data.map((item) => (
+          <Column2
+            key={item.title}
+            image={item.image}
+            title={item.title}
+            para={item.para}
+            author={item.author}
+          />
+        ))}
       </div>
     </div>
   );
