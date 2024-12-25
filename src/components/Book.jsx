@@ -1,5 +1,6 @@
 import React from "react";
 import Column2 from "./Column2";
+import { Slider2 } from "./Slider";
 
 const Book = ({ news }) => {
   const listItem = [
@@ -119,15 +120,19 @@ const Book = ({ news }) => {
         </div>
       </div>
       <div>
-        {column2Data2.map((medee) => (
-          <Column2
-            key={medee.title}
-            image={medee.image}
-            title={medee.title}
-            para={medee.para}
-            author={medee.author}
-          />
-        ))}
+        <div>
+          <Slider2 />
+          <div className="border">
+            {column2Data2.map((medee) => (
+              <Column2
+                key={medee.title}
+                title={medee.title}
+                para={medee.para}
+                author={medee.author}
+              />
+            ))}{" "}
+          </div>
+        </div>
       </div>
     </div>
   );

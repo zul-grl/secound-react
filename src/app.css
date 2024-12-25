@@ -14,10 +14,13 @@
 .imgcard {
   max-width: 320px;
   aspect-ratio: 320/188;
+  width: 100%;
+  height: 100%;
 }
 .imgcard img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .cardnews {
   border: 0.5px rgb(211, 211, 211) solid;
@@ -26,13 +29,17 @@
   max-width: 800px;
   width: 100%;
   border-radius: 5px;
+  overflow: hidden;
 }
 .blue {
   color: #0040d4;
-  font-size: 17px;
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 h4 {
-  font-size: 18px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 .gray {
   font-size: 12px;
@@ -63,7 +70,7 @@ h4 {
 .cardnews2 {
   max-width: 380px;
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 380/356;
   border: 0.5px rgb(211, 211, 211) solid;
   border-radius: 5px;
 }
@@ -100,9 +107,14 @@ h3 {
 .droplist p {
   display: flex;
   margin: 0 25px;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
+  align-items: center;
+}
+.droplist svg {
+  display: flex;
+  margin-left: 5px;
 }
 .droplist p:hover {
   color: #0040d4;
@@ -114,7 +126,7 @@ h3 {
   align-items: center;
 }
 .search button {
-  padding: 7px 20px;
+  padding: 9px 20px;
   border: none;
   border-radius: 5px;
   background-color: #0040d4;
@@ -134,17 +146,51 @@ h3 {
 }
 body {
   background-color: #f4f4f4;
+  font-family: "Roboto", serif;
 }
 .ads {
-  max-width: 1280px;
+  max-width: 1180px;
   aspect-ratio: 1280/135;
   padding: 0 50px;
   margin: auto;
+  position: relative;
+  background-position: center;
+  background-size: cover;
 }
-.ads img {
-  margin-top: 25px;
+.ads-card {
+  position: relative;
+  max-width: 380px;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 380/135;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 22px;
+  display: flex;
+}
+.ads3-card {
+  position: relative;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 22px;
+  max-width: 380px;
+  aspect-ratio: 380/265;
+}
+.dotcontainer {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+}
+.dot {
+  margin-left: 3px;
+  width: 8px;
+  height: 8px;
+  border: #ffff 1px solid;
+  border-radius: 50%;
+  background: #7e57c2;
+  opacity: 0.5;
   cursor: pointer;
 }
 .lemonade {
@@ -223,19 +269,16 @@ body {
   object-fit: cover;
 }
 .post-row2 {
-  max-width: 378px;
+  height: 100px;
   width: 100%;
-  flex: 1;
-  margin: auto;
-  aspect-ratio: 378/117;
-  padding: 13px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  border-bottom: 0.5px rgb(211, 211, 211) solid;
-  /* height: 100%; */
+  padding: 13px 10px;
+  border-top: 0.5px rgb(211, 211, 211) solid;
 }
-
+.border {
+  border: 0.5px rgb(211, 211, 211) solid;
+  height: 426px;
+  border-radius: 5px;
+}
 .column2,
 .column1 {
   border-radius: 5px;
@@ -278,10 +321,27 @@ body {
 .listcont {
   padding-right: 16px;
   overflow-y: scroll;
+  scrollbar-color: yellow black;
   max-width: 348px;
   width: 100%;
   height: 100%;
+  position: relative;
 }
+
+.listcont::-webkit-scrollbar {
+  width: 12px;
+}
+
+.listcont::-webkit-scrollbar-thumb {
+  background-color: yellow;
+  border-radius: 10px;
+}
+
+.listcont::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
 .booktitle {
   font-size: 18px;
   margin-bottom: 5px;
@@ -466,7 +526,7 @@ footer {
 }
 .images {
   position: sticky;
-  margin: 22px 0 30px;
+  /* margin: 22px 0 30px; */
   top: 85px;
   z-index: 90;
   height: 800px;
