@@ -106,15 +106,21 @@ h3 {
 }
 .droplist p {
   display: flex;
-  margin: 0 25px;
-  font-size: 15px;
-  font-weight: 700;
+  /* margin: 0 25px; */
+  font-size: 16px;
+  font-weight: 800;
   cursor: pointer;
   align-items: center;
 }
 .droplist svg {
   display: flex;
   margin-left: 5px;
+}
+.svg {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0 25px;
 }
 .droplist p:hover {
   color: #0040d4;
@@ -529,5 +535,8 @@ footer {
   /* margin: 22px 0 30px; */
   top: 85px;
   z-index: 90;
-  height: 800px;
+  height: 786px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

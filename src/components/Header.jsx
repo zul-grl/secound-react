@@ -6,44 +6,6 @@ const dropdown = [
   "Бидний тухай",
 ];
 
-const dropdownlist = [
-  ["Lemon Press", "Inside Mongolia", "Тусгай дугаар"],
-  [
-    "Эдийн засаг",
-    "Санхүү",
-    "Бизнес",
-    "Технологи",
-    "Хэвлэлийн мэдээ",
-    "Зах зээл",
-    "Сурталчилгаа",
-    "Ярилцлага",
-    "Mining Week x MinePro",
-  ],
-  [
-    "Opinions",
-    "Lead With",
-    "Lemonade",
-    "LP Transcript",
-    "Travel With",
-    "Mining 101",
-    "Finspiration",
-    "How I Invest",
-    "Web3 Nest",
-    "Blockchain",
-    "Lemon Pedia",
-    "Stories",
-    "Talks",
-  ],
-  ["Lunch Hour"],
-  [
-    "Бидний тухай",
-    "Хамтран ажиллах",
-    "Редакцын бодлого",
-    "Бидэнтэй холбогдох",
-    "Байгууллагын мэдээ",
-  ],
-];
-
 const Header = (props) => {
   return (
     <div className="header">
@@ -51,61 +13,29 @@ const Header = (props) => {
         <img src="https://lemonpress.mn/logo/lemonpress.svg" alt="" />
       </div>
       <div className="droplist">
-        <p>
-          Товхимол{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            width="10"
-            height="10"
-          >
-            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-          </svg>
-        </p>
-        <p>
-          Нийтлэлүүд{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            width="10"
-            height="10"
-          >
-            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-          </svg>
-        </p>
-        <p>
-          Цувралууд{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            width="10"
-            height="10"
-          >
-            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-          </svg>
-        </p>
-        <p>
-          Подкаст{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            width="10"
-            height="10"
-          >
-            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-          </svg>
-        </p>
-        <p>
-          Бидний тухай{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            width="10"
-            height="10"
-          >
-            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-          </svg>
-        </p>
+        {dropdown.map((text) => (
+          <div className="svg">
+            <p>{text}</p>
+            <svg
+              class="ms-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="10.422"
+              height="6.2"
+              viewBox="0 0 10.422 6.2"
+            >
+              <path
+                id="Vector"
+                d="M0,0,3.8,3.786,7.594,0"
+                transform="translate(1.414 1.414)"
+                fill="none"
+                stroke="#525252"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </div>
+        ))}
       </div>
       <div className="search">
         <svg

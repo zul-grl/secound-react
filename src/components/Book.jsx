@@ -100,7 +100,7 @@ const Book = ({ news }) => {
         <p className="booktitle">Товхимлууд</p>
         <div className="listcont">
           {listItem.map((item) => (
-            <div className="list" key={item.title}>
+            <div className="list">
               <p>{item.date}</p>
               <h5>{item.title}</h5>
             </div>
