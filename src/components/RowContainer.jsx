@@ -50,19 +50,7 @@ const RowContainer = ({ news }) => {
           />
         ))}
 
-        <div
-          style={{
-            display: "flex",
-            fontWeight: "700",
-            maxWidth: "780px",
-            width: "100%",
-            padding: "7px 20px 6px",
-            justifyContent: "center",
-            backgroundColor: "#f5f8fc",
-          }}
-        >
-          Илүү үзэх
-        </div>
+        <div className="more">Илүү үзэх</div>
       </div>
       <div className="images">
         <Slider3 />
